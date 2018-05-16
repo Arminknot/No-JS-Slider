@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Web Slider</title>
+
+    <style>
+        #slider {
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #ccc;
+            width: 1170px;
+            height: 358px;
+            margin: 100px auto;
+        }
+        
+        #slider>#gal {
+            transition: 1.3s;
+            position: relative;
+            left: 0;
+            width: 500%;
+            height: 100%;
+        }
+        
+        #slider>#gal>.items {
+            float: left;
+            width: 20%;
+        }
+        
+        #slider>#gal>.items>img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #right1 {
+            transition: 0.2s;
+            background: url("pic/if_arrow-right-01_186409.png")rgba(255, 255, 255, 1) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            z-index: 20;
+            display: block;
+        }
+        
+        #right2,
+        #right3,
+        #right4,
+        #right5 {
+            transition: 0.2s;
+            background: url("pic/if_arrow-right-01_186409.png")rgba(255, 255, 255, 1) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            right: 0px;
+            width: 50px;
+            height: 50px;
+            z-index: 20;
+            display: none;
+        }
+        
+        #left1 {
+            transition: 0.2s;
+            background: url("pic/if_arrow-left-01_186410.png")rgba(255, 255, 255, 1) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            left: 0px;
+            width: 50px;
+            height: 50px;
+            z-index: 20;
+            display: block;
+        }
+        
+        #left2,
+        #left3,
+        #left4,
+        #left5 {
+            transition: 0.2s;
+            background: url("pic/if_arrow-left-01_186410.png")rgba(255, 255, 255, 1) no-repeat 50% 50%;
+            background-size: 80%;
+            border-radius: 50%;
+            position: absolute;
+            top: 140px;
+            left: 0px;
+            width: 50px;
+            height: 50px;
+            z-index: 20;
+            display: none;
+        }
+        
+        #r1:checked~#gal {
+            left: -100%;
+        }
+        
+        #r1:checked~#right2,
+        #r1:checked~#left2 {
+            display: block
+        }
+        
+        #r2:checked~#gal {
+            left: -200%;
+        }
+        
+        #r2:checked~#right3,
+        #r2:checked~#left3 {
+            display: block
+        }
+        
+        #r3:checked~#gal {
+            left: -300%;
+        }
+        
+        #r3:checked~#right4,
+        #r3:checked~#left4 {
+            display: block
+        }
+        
+        #r4:checked~#gal {
+            left: -400%;
+        }
+        
+        #r4:checked~#right5,
+        #r4:checked~#left5 {
+            display: block
+        }
+        
+        #l3:checked~#gal {
+            left: -100%
+        }
+        
+        #l3:checked~#right2,
+        #l3:checked~#left2 {
+            display: block
+        }
+        
+        #l4:checked~#gal {
+            left: -200%
+        }
+        
+        #l4:checked~#right3,
+        #l4:checked~#left3 {
+            display: block
+        }
+        
+        #l5:checked~#gal {
+            left: -300%
+        }
+        
+        #l5:checked~#right4,
+        #l5:checked~#left4 {
+            display: block
+        }
+        
+        #l1:checked~#gal {
+            left: -400%
+        }
+        
+        #l1:checked~#right5,
+        #l1:checked~#left5 {
+            display: block
+        }
+        
+        input {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="slider">
+
+        <input type="radio" id="r1" name="lol">
+        <input type="radio" id="r2" name="lol">
+        <input type="radio" id="r3" name="lol">
+        <input type="radio" id="r4" name="lol">
+        <input type="radio" id="r5" name="lol">
+
+        <input type="radio" id="l1" name="lol">
+        <input type="radio" id="l2" name="lol">
+        <input type="radio" id="l3" name="lol">
+        <input type="radio" id="l4" name="lol">
+        <input type="radio" id="l5" name="lol">
+
+        <label for="r1" id="right1"></label>
+        <label for="r2" id="right2"></label>
+        <label for="r3" id="right3"></label>
+        <label for="r4" id="right4"></label>
+        <label for="r5" id="right5"></label>
+
+        <label for="l1" id="left1"></label>
+        <label for="l2" id="left2"></label>
+        <label for="l3" id="left3"></label>
+        <label for="l4" id="left4"></label>
+        <label for="l5" id="left5"></label>
+
+        <div id="gal">
+
+            <div class="items">
+                <img src="pic/1012_980_AtomSeries.v_1.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/1012_980_PanzerSpeaker.v_1.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/j.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/main.jpg">
+
+            </div>
+
+            <div class="items">
+                <img src="pic/NVIDIA-SHIELDTV_Banner980x300.png">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
